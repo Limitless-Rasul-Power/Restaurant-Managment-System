@@ -182,7 +182,7 @@ void Start()
 				db->Get_stock()->Push_readable_data_to_file();
 				
 				system("CLS");
-				db->Show();
+				db->Get_restaurant()->Show();
 				std::cout << "Bye - Bye\n";
 				system("pause");
 				return;
@@ -417,7 +417,7 @@ void Start()
 				
 
 				system("CLS");
-				db->Show();
+				db->Get_restaurant()->Show();
 				std::cout << "Bye - Bye\n";
 				system("pause");
 				return;

@@ -173,6 +173,14 @@ void Start()
 				ss << Ingredient::ingredient_id << '\n';
 				FileHelper::Append_file_in_text_format(FileHelper::useful_number_for_ingredients, ss.str());
 				FileHelper::Write_file_in_binary_format(FileHelper::restaurant_budget, static_cast<size_t>(db->Get_restaurant()->Get_budget()));
+				
+				db->Push_all_meal_data_to_file();
+				db->Push_more_info_about_meal_to_file();
+				db->Push_less_info_about_meal_to_file();
+				db->Push_useful_meal_numbers_to_file();
+				db->Get_stock()->Push_all_data_to_file();
+				db->Get_stock()->Push_readable_data_to_file();
+				
 				system("CLS");
 				db->Show();
 				std::cout << "Bye - Bye\n";

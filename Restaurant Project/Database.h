@@ -67,7 +67,8 @@ public:
 	bool Is_correct_admin_credentials(const std::string& user_name, const std::string& password);
 	bool Is_meal_name_already_exist(const std::string& meal_name);
 	bool Is_ingredient_name_already_exist(const std::string& ingredient_name);
-
+	bool Is_ingredient_exist();
+	
 	int Is_table_exist(const std::string& table_no);
 	int Is_meal_id_exist(const int& id);
 	int Is_order_id_exist(const int& id);

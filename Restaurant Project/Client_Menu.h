@@ -18,7 +18,7 @@ namespace Client
 			Sleep(1000);
 			return;
 		}
-		else if (db->Get_stock()->Get_items().size() == 0ui64)
+		else if (!db->Is_ingredient_exist())
 		{
 			std::cout << "There is no Recipe Item in the Restaurant. Sorry, we recover soon :(\n";
 			Sleep(1000);

@@ -168,7 +168,7 @@ namespace Kitchen
 											meal_ingredient_amount = db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_items()[r]->Get_amount();
 											db->Get_stock()->Increase_ingredient_amount(db->Get_stock()->Get_items()[index], order_amount * meal_ingredient_amount);
 										}
-										db->Get_restaurant()->Get_tables()[i]->Set_message_from_kitchen(db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_name() + " didn't prepare because lack of resources");
+										db->Get_restaurant()->Get_tables()[i]->Set_message_from_kitchen(db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_name() + " with amount (" + std::to_string(order_amount) + ") didn't prepare because lack of resources");
 										db->Get_restaurant()->Get_tables()[i]->Delete_order_with_meal_name_and_amount(db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_name(), db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_amount());
 
 										--j;
@@ -179,7 +179,7 @@ namespace Kitchen
 								{
 									db->Get_restaurant()->Set_budget(static_cast<float>(order_amount) * db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_meal_price());
 									FileHelper::Write_file_in_binary_format(FileHelper::restaurant_budget, static_cast<float>(db->Get_restaurant()->Get_budget()));
-									db->Get_restaurant()->Get_tables()[i]->Set_message_from_kitchen(db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_name() + " Prepared Successfully!!!");
+									db->Get_restaurant()->Get_tables()[i]->Set_message_from_kitchen(db->Get_restaurant()->Get_tables()[i]->Get_orders()[j]->Get_meal()->Get_name() + " with amount(" + std::to_string(order_amount) + ") is Prepared Successfully!!!");
 								}
 							}
 						}

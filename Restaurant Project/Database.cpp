@@ -332,6 +332,19 @@ bool DataBase::Is_ingredient_name_already_exist(const std::string& ingredient_na
 	return false;
 }
 
+bool DataBase::Is_ingredient_exist()
+{
+	size_t length = Get_stock()->Get_items().size();
+	if(length == 0ui64)
+		return false;
+	
+	for(size_t i = 0ui64; i < length; i++)
+		if(Get_stock()->Get_items()[i]->Get_amount() > 0)
+			return true;
+	
+	return false;
+}
+
 int DataBase::Is_meal_id_exist(const int& id)
 {
 	size_t length = Get_meals().size();

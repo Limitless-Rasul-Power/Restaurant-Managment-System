@@ -190,8 +190,6 @@ void DataBase::Show_summary_of_the_meals()
 	}
 }
 
-#include <algorithm>
-
 bool DataBase::Search_meal(const std::string& meal_name)
 {
 	size_t length = Get_meals().size();
